@@ -1,14 +1,16 @@
 package me.wcaquino.seubarriga.suite;
 
+
 import me.wcaquino.seubarriga.test.ContasTest;
 import me.wcaquino.seubarriga.test.LoginTest;
-import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
-import org.junit.jupiter.api.Order;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(JUnitPlatform.class)
-@SelectClasses({ContasTest.class, LoginTest.class})
+@Suite
+@SelectClasses ({
+        LoginTest.class, // substitua com suas próprias classes de teste
+        ContasTest.class // substitua com suas próprias classes de teste
+        // adicione mais classes de teste aqui
+})
 public class SuiteGeral {
-    // realizar execução das classes, testes já estão independentes
 }
-
