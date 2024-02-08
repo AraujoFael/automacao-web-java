@@ -6,6 +6,11 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import me.wcaquino.seubarriga.selectors.LoginSelector;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
+
+import java.io.File;
 
 import static me.wcaquino.seubarriga.core.DriverCenter.*;
 
@@ -22,7 +27,7 @@ public class BaseTest extends BasePage {
     }
     @AfterEach
     public  void finaliza(TestInfo testInfo){
-       /* if (getDriver() instanceof TakesScreenshot) {
+        if (getDriver() instanceof TakesScreenshot) {
             String currentTestName = testInfo.getTestMethod().get().getName();
             File screenshotFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
             String screenshotFileName = "screenshot_" + currentTestName + ".png";
@@ -32,9 +37,9 @@ public class BaseTest extends BasePage {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }*/
+        }
 
-      //KillDriver();
+      KillDriver();
 
 
     }

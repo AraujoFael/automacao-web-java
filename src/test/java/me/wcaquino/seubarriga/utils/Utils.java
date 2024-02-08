@@ -3,6 +3,7 @@ package me.wcaquino.seubarriga.utils;
 import me.wcaquino.seubarriga.selectors.LoginSelector;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
@@ -25,6 +26,12 @@ public class Utils {
         getDriver().findElement(selector.email).sendKeys(email);
         getDriver().findElement(selector.password).sendKeys(password);
         getDriver().findElement(selector.enterButtom).click();
+    }
+    public static String retornaDataAtualEmString(){
+        LocalDateTime dataAgora = LocalDateTime.now();
+        String dataConvertida = String.valueOf(dataAgora.getSecond());
+        return dataConvertida;
+
     }
     //public static void adicionarConta()
 }

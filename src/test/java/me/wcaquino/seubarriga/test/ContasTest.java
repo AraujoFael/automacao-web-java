@@ -45,7 +45,7 @@ public class ContasTest extends ContasPage {
         clicarContas();
         acessarListagem();
         clicarEditarConta("tj971*18888");
-        preencherCampoNome("tj907112777");
+        preencherCampoNome("tj907112");
         salvarNome();
         assertEquals("Conta alterada com sucesso!", msgRetornoDeAcao());
         clicarContas();
