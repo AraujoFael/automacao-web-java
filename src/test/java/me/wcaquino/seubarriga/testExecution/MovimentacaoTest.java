@@ -1,4 +1,4 @@
-package me.wcaquino.seubarriga.test;
+package me.wcaquino.seubarriga.testExecution;
 
 
 import me.wcaquino.seubarriga.page.MovimentacaoPage;

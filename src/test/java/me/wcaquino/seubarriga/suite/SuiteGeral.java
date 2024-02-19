@@ -1,20 +1,19 @@
 package me.wcaquino.seubarriga.suite;
 
 
-import me.wcaquino.seubarriga.test.ContasTest;
-import me.wcaquino.seubarriga.test.LoginTest;
-import me.wcaquino.seubarriga.test.MovimentacaoTest;
-import me.wcaquino.seubarriga.test.SaldoTest;
+import me.wcaquino.seubarriga.testExecution.ContasTest;
+import me.wcaquino.seubarriga.testExecution.LoginTest;
+import me.wcaquino.seubarriga.testExecution.MovimentacaoTest;
+import me.wcaquino.seubarriga.testExecution.SaldoTest;
 import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 
+
 @Suite
-@SelectClasses ({
-        LoginTest.class, // substitua com suas próprias classes de teste
-        ContasTest.class, // substitua com suas próprias classes de teste
-        MovimentacaoTest.class,
-        SaldoTest.class
-        // adicione mais classes de teste aqui
-})
-public class SuiteGeral {
+@SelectClasses({ContasTest.class, LoginTest.class, MovimentacaoTest.class, SaldoTest.class})
+public class SuiteGeral  {
+    /*1- Ajustar execução geral
+     2- Reasistir aula para rodar a automação com o selenium grid
+     3- Refatorar instanciação do driver do firefox*/
 }

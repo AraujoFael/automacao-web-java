@@ -11,6 +11,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import static me.wcaquino.seubarriga.core.DriverCenter.*;
 
@@ -33,13 +38,22 @@ public class BaseTest extends BasePage {
             String screenshotFileName = "screenshot_" + currentTestName + ".png";
 
             try {
-                FileHandler.copy(screenshotFile, new File(screenshotFileName));
-            } catch (Exception e) {
+                // Criar a pasta "evidências" se ela não existir
+                Path evidenciasPath = Paths.get("target/evidências");
+                if (!Files.exists(evidenciasPath)) {
+                    Files.createDirectories(evidenciasPath);
+                }
+
+                // Salvar o screenshot na pasta "evidências"
+                Path screenshotPath = evidenciasPath.resolve(screenshotFileName);
+                Files.copy(screenshotFile.toPath(), screenshotPath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-      KillDriver();
+
+        KillDriver();
 
 
     }

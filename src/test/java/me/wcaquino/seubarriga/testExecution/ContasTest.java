@@ -1,11 +1,17 @@
-package me.wcaquino.seubarriga.test;
+package me.wcaquino.seubarriga.testExecution;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import me.wcaquino.seubarriga.page.ContasPage;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+@Epic("Contas")
+@Feature("Tela de contas")
 
 public class ContasTest extends ContasPage {
     @Test
+    @Description("Teste de preenchimento de conta valida")
     public void adicionarContaValida(){
         loginBar("FirstNewTest@ggmail.com", "Teste@123");
         clicarContas();
@@ -19,6 +25,7 @@ public class ContasTest extends ContasPage {
 
     }
     @Test
+    @Description("Valida de preenchimento de conta com nome já existente")
     public void adicionarContaInvalidaMesmoNome(){
         loginBar("FirstNewTest@ggmail.com", "Teste@123");
         clicarContas();
@@ -36,6 +43,7 @@ public class ContasTest extends ContasPage {
 
     }
     @Test
+    @Description("Validação de alteração de conta")
     public void alterarContaValida(){
         loginBar("FirstNewTest@ggmail.com", "Teste@123");
         clicarContas();
@@ -55,6 +63,7 @@ public class ContasTest extends ContasPage {
 
     }
     @Test
+    @Description("Validação de possibilidade de deleção de conta")
     public void apagarConta(){
         loginBar("FirstNewTest@ggmail.com", "Teste@123");
         clicarContas();
@@ -68,6 +77,7 @@ public class ContasTest extends ContasPage {
     }
 
     @Test
+    @Description("Validação de impossibilidade de deleção de conta com movimentação")
     public void apagarContaComMovimentacao(){
         loginBar("FirstNewTest@ggmail.com", "Teste@123");
         clicarContas();
@@ -75,5 +85,6 @@ public class ContasTest extends ContasPage {
         clicarExcluirConta("conta alterada");
         assertEquals("Conta em uso na movimentações", msgRetornoDeAcao());
     }
-    // todos independentes
+   // configurações finais do projeto, parei no report do allure fazer projeto realizar a conversão de json para
+    //Html, não está commitado colocar allure-results no git ignore
 }

@@ -29,15 +29,15 @@ public class DriverCenter {
 
                 case FIREFOX:
                     FirefoxOptions options = new FirefoxOptions();
-                    options.addArguments("--headless=false");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
+                    options.addArguments("--headless=true");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
                     // Assim passando para rodar em headless
                     driver = new FirefoxDriver(options);
                 case CHROME:
-                    //ChromeOptions optionsChrome = new ChromeOptions();
-                    //optionsChrome.addArguments("--headless=true");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
+                    ChromeOptions optionsChrome = new ChromeOptions();
+                    optionsChrome.addArguments("--headless=true");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
                     // Assim passando para rodar em headless
-                   // driver = new ChromeDriver(optionsChrome);
-                 driver = new ChromeDriver();
+                   driver = new ChromeDriver(optionsChrome);
+                // driver = new ChromeDriver();
             }
 
         }

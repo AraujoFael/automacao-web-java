@@ -1,6 +1,5 @@
-package me.wcaquino.seubarriga.test;
+package me.wcaquino.seubarriga.testExecution;
 
-import me.wcaquino.seubarriga.core.BasePage;
 import me.wcaquino.seubarriga.page.SaldoPage;
 import org.junit.jupiter.api.Test;
 
