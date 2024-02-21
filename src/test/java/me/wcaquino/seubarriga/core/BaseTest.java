@@ -1,14 +1,11 @@
 package me.wcaquino.seubarriga.core;
 
 
-import io.restassured.RestAssured;
-import io.restassured.http.Method;
-import io.restassured.response.Response;
+
 import me.wcaquino.seubarriga.selectors.LoginSelector;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +18,7 @@ import static me.wcaquino.seubarriga.core.DriverCenter.*;
 
 
 public class BaseTest extends BasePage {
+
 
     static LoginSelector selector = new LoginSelector();
 
