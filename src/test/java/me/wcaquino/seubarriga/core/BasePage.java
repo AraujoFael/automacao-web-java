@@ -23,7 +23,7 @@ public  class BasePage extends Utils {
 
     public String obterValorCampo(By element, String texto) {
         return getDriver().findElement(element).getAttribute(texto);
-    } // Todo recolhimento de atributo tem ser um metódo string e retornar algo
+    } // Todu recolhimento de atributo tem ser um metódo string e retornar algo
 
     public void clicaRadio(By element) {
         getDriver().findElement(element).click();

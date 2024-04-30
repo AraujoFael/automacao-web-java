@@ -6,38 +6,42 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+/**
+ * Esta classe gerencia o WebDriver utilizado nos testes. Ela fornece métodos para obter uma instância do WebDriver
+ * e para encerrar o WebDriver quando não for mais necessário.
+ * - Instância estática do WebDriver
+ * - Enumeração dos navegadores suportados
+ * - Método para obter uma instância do WebDriver
+ * - Método para encerrar o WebDriver
+ */
 public class DriverCenter {
 
-    private static WebDriver driver; // Importa o driver no modelo privado
+    private static WebDriver driver;
 
-    public enum Browsers{
+    public enum Browsers {
         CHROME,
         FIREFOX
     }
+
     public static Browsers browsers = Browsers.CHROME;
 
-    private DriverCenter(){} // Gera um construtor para ter acesso ao driver porem privado
+    private DriverCenter() {
+    }
 
-    public static WebDriver getDriver(){ // Aqui gera um get para o construtor privado
-        // Aqui ele se o driver está ativo se não ele gera um novo driver se sim ele retorna o driver ativo
+    public static WebDriver getDriver() {
 
-
-
-
-        if(driver == null ){
-            switch (browsers){
+        if (driver == null) {
+            switch (browsers) {
 
                 case FIREFOX:
                     FirefoxOptions options = new FirefoxOptions();
-                    options.addArguments("--headless=true");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
-                    // Assim passando para rodar em headless
+                    options.addArguments("--headless=true");
                     driver = new FirefoxDriver(options);
                 case CHROME:
                     ChromeOptions optionsChrome = new ChromeOptions();
-                    optionsChrome.addArguments("--headless=true");// Aqui ele instancia a class ChromeOptios e usa o add aarguments
-                    // Assim passando para rodar em headless
-                   driver = new ChromeDriver(optionsChrome);
-                // driver = new ChromeDriver();
+                    optionsChrome.addArguments("--headless=true");
+                    driver = new ChromeDriver(optionsChrome);
+
             }
 
         }
@@ -46,8 +50,9 @@ public class DriverCenter {
 
 
     }
-    public static void KillDriver(){
-        if(driver != null){ // Aqui ele ve se o driver existe se ele existir ele mata o driver
+
+    public static void KillDriver() {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
