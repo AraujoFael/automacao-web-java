@@ -1,6 +1,6 @@
 # Projeto de Automação Web com Java utilizando Selenium e JUnit 5
 
-Este projeto é uma automação de testes web desenvolvida utilizando Selenium WebDriver e JUnit 5. A estrutura do projeto segue o padrão de Page Object Model (POM) para uma organização mais eficiente do código.
+Este projeto é uma automação de testes web desenvolvida utilizando Java com Selenium WebDriver e JUnit 5. A estrutura do projeto segue o padrão de Page Object Model (POM) para uma organização mais eficiente do código.
 
 ## O que é feito
 
@@ -10,6 +10,7 @@ O projeto consiste em automação de testes web para realizar testes funcionais 
 
 A automação é realizada utilizando as seguintes tecnologias e técnicas:
 
+- **Linguagem Java**: Como a linguagem de programação para construção do projeto
 - **Selenium WebDriver**: Para interagir com os elementos da página e realizar ações.
 - **JUnit 5**: Para escrever e executar os casos de teste de forma estruturada.
 - **Page Object Model (POM)**: Para organizar o código em classes que representam as páginas e os elementos da interface do usuário.
@@ -30,5 +31,5 @@ Você pode executar os testes de duas maneiras:
 
 ## Observação
 
-Para executar os testes com sucesso, é recomendável acessar o site que está sendo testado e criar uma conta de usuário. Em seguida, você pode parametrizar as informações de login na classe `BaseTest` para garantir que os testes sejam executados corretamente.
+Para executar os testes com sucesso, é recomendável acessar o site (https://seubarriga.wcaquino.me) que está sendo testado e criar uma conta de usuário. Em seguida, você pode parametrizar suas  informações de login na classe `BaseTest` para garantir que os testes sejam executados corretamente.
 
