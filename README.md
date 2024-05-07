@@ -21,6 +21,8 @@ Para clonar este repositório, execute o seguinte comando em seu terminal:
 
 git clone https://github.com/seu-usuario/repo-aqui
 
+Após ocorrer a clonagem do projeto abra o diretorio com uma IDE de sua prefêrencia.
+
 
 ## Como executar
 
